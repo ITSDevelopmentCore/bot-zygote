@@ -51,23 +51,10 @@
                 <version>3.0.3</version>
 
                 <configuration>
-                    <appName>sushi</appName>
+                    <appName>salty-inlet-25992</appName>
                     <processTypes>
                         <web>java $JAVA_OPTS -cp target/classes:target/dependency/* Main</web>
                     </processTypes>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.1</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>Main</mainClass>
-                        </manifest>
-                    </archive>
                 </configuration>
             </plugin>
 
