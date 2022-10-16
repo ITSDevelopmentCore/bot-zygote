@@ -8,11 +8,12 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import java.util.Timer;
 import java.util.TimerTask;
 
+@SuppressWarnings("ALL")
 public class CallbackQueryHandler extends BaseHandler{
 
     private final int DELAY_FIVE_SECONDS = 5000;
 
-    private final String SEND_PUSH_STRING = "Отправить PUSH";
+    private final String SEND_PUSH_STRING = "РћС‚РїСЂР°РІРёС‚СЊ PUSH";
     @Override
     public void execute(DefaultAbsSender sender, Update update) {
         if (update.getCallbackQuery().getData().equalsIgnoreCase(SEND_PUSH_STRING))
@@ -22,7 +23,7 @@ public class CallbackQueryHandler extends BaseHandler{
                 public void run() {
                     try {
                         sender.execute(MessageFactory.simpleTextMessage(
-                                "Вы получили PUSH уведомление с выгодным предложением!",
+                                "Р’С‹ РїРѕР»СѓС‡РёР»Рё PUSH СѓРІРµРґРѕРјР»РµРЅРёРµ СЃ РєСЂР°Р№РЅРµ РІС‹РіРѕРґРЅС‹Рј РїСЂРµРґР»РѕР¶РµРЅРёРµРј!",
                                 update.getCallbackQuery().getMessage().getChatId()));
                     } catch (TelegramApiException e) {
                         throw new RuntimeException(e);
