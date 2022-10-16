@@ -14,6 +14,7 @@
 
         <versions.telegram>6.1.0</versions.telegram>
         <versions.mavenDependency>3.3.0</versions.mavenDependency>
+        <verisons.mavenAppassembly>1.10</verisons.mavenAppassembly>
         <versions.dagger>2.44</versions.dagger>
     </properties>
 
@@ -63,6 +64,21 @@
                     </annotationProcessorPaths>
 
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${versions.mavenDependency}</version>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
