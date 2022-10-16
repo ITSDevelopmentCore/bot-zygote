@@ -24,5 +24,6 @@ its\development\dagger\MainModule_ProvidePreCheckoutHandlerFactory.class
 its\development\dagger\MainModule_ProvideTextHandlerFactory.class
 its\development\commands\BotCommandTextProvider.class
 its\development\commands\OfferCommand.class
+its\development\handlers\TextHandler$1.class
 its\development\wrapper\TelegramBotWrapper_MembersInjector.class
 its\development\commands\InlineKeyboardCommand.class

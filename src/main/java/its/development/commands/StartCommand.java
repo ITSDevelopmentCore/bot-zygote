@@ -22,7 +22,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "РџРѕРґРѕР±СЂР°С‚СЊ СЂРµРїРµС‚РёС‚РѕСЂР°", "РћС‚РїСЂР°РІРёС‚СЊ PUSH");
+        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Подобрать репетитора", "Отправить PUSH");
 
         replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-education.firebaseapp.com"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
@@ -39,8 +39,8 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Р­С‚Рѕ РґРµРјРѕРЅСЃС‚СЂР°С†РёРѕРЅРЅС‹Р№ Р±РѕС‚ СЃ РїСЂРёР»РѕР¶РµРЅРёРµРј РґР»СЏ РїРѕРґР±РѕСЂР° СЂРµРїРµС‚РёС‚РѕСЂР°. " +
-                "Р”Р»СЏ РѕС‚РєСЂС‹С‚РёСЏ РїСЂРёР»РѕР¶РµРЅРёСЏ РЅР°Р¶РјРёС‚Рµ РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РєРЅРѕРїРєСѓ РЅРёР¶Рµ, Р»РёР±Рѕ РЅР° РєРЅРѕРїРєСѓ РјРµРЅСЋ." +
-                "Р”Р»СЏ РїСЂРѕРІРµСЂРєРё PUSH-СѓРІРµРґРѕРјР»РµРЅРёР№ РЅР°Р¶РјРёС‚Рµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РєРЅРѕРїРєСѓ РЅРёР¶Рµ Рё СЃРІРµСЂРЅРёС‚Рµ/Р·Р°РєСЂРѕР№С‚Рµ Telegram";
+        return "Это демонстрационный бот с приложением для подбора репетитора. " +
+                "Для открытия приложения нажмите на соответствующую кнопку ниже, либо на кнопку меню." +
+                "Для проверки PUSH-уведомлений нажмите соответствующую кнопку ниже и сверните/закройте Telegram";
     }
 }
