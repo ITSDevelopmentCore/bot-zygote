@@ -1,7 +1,7 @@
 package its.development.wrapper;
 
 import its.development.bots.LongPollingBot;
-import its.development.bots.service_bot.ServicesBot;
+import its.development.bots.serviceBot.ServicesBot;
 import its.development.dagger.DaggerMainComponent;
 import its.development.dagger.MainComponent;
 import org.telegram.telegrambots.meta.TelegramBotsApi;

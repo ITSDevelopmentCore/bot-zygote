@@ -1,8 +1,8 @@
-﻿package its.development.bots.service_bot;
+package its.development.bots.serviceBot;
 
 import its.development.bots.BotConstants;
 import its.development.bots.LongPollingBot;
-import its.development.bots.service_bot.commands.StartCommand;
+import its.development.bots.serviceBot.commands.StartCommand;
 import its.development.handlers.BaseHandler;
 import its.development.handlers.CallbackQueryHandler;
 import org.telegram.telegrambots.extensions.bots.commandbot.TelegramLongPollingCommandBot;
@@ -71,7 +71,4 @@ public class ServicesBot extends TelegramLongPollingCommandBot {
         super.registerDefaultAction(defaultConsumer);
     }
 
-    public enum HandlerType {
-        TEXT, CALLBACK_QUERY, PRECHECKOUT_QUERY
-    }
 }
