@@ -11,6 +11,7 @@ import javax.inject.Inject;
 
 public class TelegramMultibotWrapper {
 
+
     private MainComponent component;
 
     @Inject
