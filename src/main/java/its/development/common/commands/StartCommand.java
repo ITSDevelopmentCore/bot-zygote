@@ -1,4 +1,4 @@
-package its.development.bots.serviceBot.commands;
+package its.development.common.commands;
 
 import its.development.common.commands.BotCommandTextProvider;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
@@ -25,7 +25,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
         InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
 
-        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-services.firebaseapp.com/"));
+        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-education.firebaseapp.com"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
 
         sendMessage.setReplyMarkup(replyKeyboard);
@@ -40,7 +40,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Мы предлагаем познакомиться в Web Apps в Telegram. На этот раз посмотрим пример для записи к специалисту." +
+        return "Мы предлагаем познакомиться в Web Apps в Telegram. На этот раз посмотрим пример для подбора репетитора." +
                 " Web Apps имеют функционал, ничем не уступающий мобильным приложениям, а стоимость разработки сокращается до 10 раз. " +
                 "Ваши Web Apps уже установлены в телефонах каждого жителя России и СНГ. Для опробования PUSH уведомлений - нажмите на соответствующую кнопку" +
                 " и закройте/сверните Telegram";
