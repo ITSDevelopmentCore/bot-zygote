@@ -18,26 +18,26 @@ import org.telegram.telegrambots.meta.TelegramBotsApi;
     "unchecked",
     "rawtypes"
 })
-public final class TelegramBotWrapper_MembersInjector implements MembersInjector<TelegramBotWrapper> {
+public final class TelegramBotWrapper_MembersInjector implements MembersInjector<TelegramMultibotWrapper> {
   private final Provider<TelegramBotsApi> telegramBotsApiProvider;
 
   public TelegramBotWrapper_MembersInjector(Provider<TelegramBotsApi> telegramBotsApiProvider) {
     this.telegramBotsApiProvider = telegramBotsApiProvider;
   }
 
-  public static MembersInjector<TelegramBotWrapper> create(
+  public static MembersInjector<TelegramMultibotWrapper> create(
       Provider<TelegramBotsApi> telegramBotsApiProvider) {
     return new TelegramBotWrapper_MembersInjector(telegramBotsApiProvider);
   }
 
   @Override
-  public void injectMembers(TelegramBotWrapper instance) {
+  public void injectMembers(TelegramMultibotWrapper instance) {
     injectTelegramBotsApi(instance, telegramBotsApiProvider.get());
   }
 
   @InjectedFieldSignature("its.development.wrapper.TelegramBotWrapper.telegramBotsApi")
-  public static void injectTelegramBotsApi(TelegramBotWrapper instance,
-      TelegramBotsApi telegramBotsApi) {
+  public static void injectTelegramBotsApi(TelegramMultibotWrapper instance,
+                                           TelegramBotsApi telegramBotsApi) {
     instance.telegramBotsApi = telegramBotsApi;
   }
 }

@@ -2,7 +2,7 @@ package its.development.dagger;
 
 import its.development.bots.LongPollingBot;
 import dagger.Component;
-import its.development.wrapper.TelegramBotWrapper;
+import its.development.wrapper.TelegramMultibotWrapper;
 
 import javax.inject.Singleton;
 
@@ -10,7 +10,7 @@ import javax.inject.Singleton;
 @Component(modules = {MainModule.class})
 public interface MainComponent {
 
-    void inject(TelegramBotWrapper telegramBotWrapper);
+    void inject(TelegramMultibotWrapper telegramMultibotWrapper);
     void inject(LongPollingBot telegramBotWrapper);
 
 }

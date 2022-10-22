@@ -9,12 +9,13 @@ import dagger.internal.Preconditions;
 import its.development.bots.LongPollingBot;
 import its.development.bots.LongPollingBot_MembersInjector;
 import its.development.handlers.BaseHandler;
-import its.development.wrapper.TelegramBotWrapper;
+import its.development.wrapper.TelegramMultibotWrapper;
 import its.development.wrapper.TelegramBotWrapper_MembersInjector;
 import java.util.Map;
 import java.util.Set;
 import javax.annotation.Generated;
 import javax.inject.Provider;
+
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.IBotCommand;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 
@@ -88,8 +89,8 @@ public final class DaggerMainComponent {
     }
 
     @Override
-    public void inject(TelegramBotWrapper telegramBotWrapper) {
-      injectTelegramBotWrapper(telegramBotWrapper);
+    public void inject(TelegramMultibotWrapper telegramMultibotWrapper) {
+      injectTelegramBotWrapper(telegramMultibotWrapper);
     }
 
     @Override
@@ -98,7 +99,7 @@ public final class DaggerMainComponent {
     }
 
     @CanIgnoreReturnValue
-    private TelegramBotWrapper injectTelegramBotWrapper(TelegramBotWrapper instance) {
+    private TelegramMultibotWrapper injectTelegramBotWrapper(TelegramMultibotWrapper instance) {
       TelegramBotWrapper_MembersInjector.injectTelegramBotsApi(instance, providesTelegramBotsApiProvider.get());
       return instance;
     }
