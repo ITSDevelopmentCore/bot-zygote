@@ -23,7 +23,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
+        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "РћС‚РєСЂС‹С‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ", "РћС‚РїСЂР°РІРёС‚СЊ PUSH");
 
         replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-services.firebaseapp.com/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
@@ -40,9 +40,9 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Мы предлагаем познакомиться в Web Apps в Telegram. На этот раз посмотрим пример для записи к специалисту." +
-                " Web Apps имеют функционал, ничем не уступающий мобильным приложениям, а стоимость разработки сокращается до 10 раз. " +
-                "Ваши Web Apps уже установлены в телефонах каждого жителя России и СНГ. Для опробования PUSH уведомлений - нажмите на соответствующую кнопку" +
-                " и закройте/сверните Telegram";
+        return "РњС‹ РїСЂРµРґР»Р°РіР°РµРј РїРѕР·РЅР°РєРѕРјРёС‚СЊСЃСЏ РІ Web Apps РІ Telegram. РќР° СЌС‚РѕС‚ СЂР°Р· РїРѕСЃРјРѕС‚СЂРёРј РїСЂРёРјРµСЂ РґР»СЏ Р·Р°РїРёСЃРё Рє СЃРїРµС†РёР°Р»РёСЃС‚Сѓ." +
+                " Web Apps РёРјРµСЋС‚ С„СѓРЅРєС†РёРѕРЅР°Р», РЅРёС‡РµРј РЅРµ СѓСЃС‚СѓРїР°СЋС‰РёР№ РјРѕР±РёР»СЊРЅС‹Рј РїСЂРёР»РѕР¶РµРЅРёСЏРј, Р° СЃС‚РѕРёРјРѕСЃС‚СЊ СЂР°Р·СЂР°Р±РѕС‚РєРё СЃРѕРєСЂР°С‰Р°РµС‚СЃСЏ РґРѕ 10 СЂР°Р·. " +
+                "Р’Р°С€Рё Web Apps СѓР¶Рµ СѓСЃС‚Р°РЅРѕРІР»РµРЅС‹ РІ С‚РµР»РµС„РѕРЅР°С… РєР°Р¶РґРѕРіРѕ Р¶РёС‚РµР»СЏ Р РѕСЃСЃРёРё Рё РЎРќР“. Р”Р»СЏ РѕРїСЂРѕР±РѕРІР°РЅРёСЏ PUSH СѓРІРµРґРѕРјР»РµРЅРёР№ - РЅР°Р¶РјРёС‚Рµ РЅР° СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰СѓСЋ РєРЅРѕРїРєСѓ" +
+                " Рё Р·Р°РєСЂРѕР№С‚Рµ/СЃРІРµСЂРЅРёС‚Рµ Telegram";
     }
 }
