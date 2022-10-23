@@ -1,4 +1,4 @@
-package its.development.common.commands;
+package its.development.bots.educationBot.commands;
 
 import its.development.common.commands.BotCommandTextProvider;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
