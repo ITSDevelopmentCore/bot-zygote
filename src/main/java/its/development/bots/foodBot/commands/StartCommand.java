@@ -42,4 +42,5 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     public String getCommandText() {
         return "Этот Web App демонстрирует функционал для Food-tech индустрии. Конверсия и вовлеченность такого бота выше, чем у мобильных приложений для малого и среднего бизнеса, " +
                 "а стоимость разработки и скорость модификаций в разы меньше.";
+    }
 }
