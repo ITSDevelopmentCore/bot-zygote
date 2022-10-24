@@ -10,12 +10,20 @@ public class BotConstants {
      */
     private static final String BOT_EDUCATION_TOKEN = "5770323383:AAFc123Gv0RDN6EzzBle-DBEn-BXOdQRQk0";
     private static final String BOT_SERVICES_TOKEN = "5449239733:AAGt9fkJHD6YaPbKnCK7p8020JEpkE5QmPM";
+    private static final String BOT_FOOD_TOKEN = "5326438889:AAHhkmGNZJ48OgvaeRbcKxIi_8YRCBoW49w";
+
     private static final String BOT_TEST_TOKEN = "5193116716:AAHtN93_Ul67hVJnPAvmPPancKs7P3Utr1M";
 
     public static String getBotEducationToken()
     {
         return EnvironmentConstants.BUILD_TYPE == DEBUG ? BOT_TEST_TOKEN : BOT_EDUCATION_TOKEN;
     }
+
+    public static String getBotFoodToken()
+    {
+        return EnvironmentConstants.BUILD_TYPE == DEBUG ? BOT_TEST_TOKEN : BOT_FOOD_TOKEN;
+    }
+
 
     public static String getBotServicesToken()
     {
