@@ -1,6 +1,7 @@
 package its.development.wrapper;
 
 import its.development.bots.educationBot.EducationBotLongPolling;
+import its.development.bots.foodBot.FoodBotLongPolling;
 import its.development.bots.serviceBot.ServicesBotLongPolling;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.bots.AbsSender;
@@ -27,6 +28,7 @@ public class TelegramMultibotWrapper {
         activeBots = new ArrayList<>();
         activeBots.add(new EducationBotLongPolling());
         activeBots.add(new ServicesBotLongPolling());
+        activeBots.add(new FoodBotLongPolling());
     }
 
     public void run(){

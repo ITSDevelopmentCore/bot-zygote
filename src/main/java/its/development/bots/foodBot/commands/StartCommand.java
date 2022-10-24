@@ -1,4 +1,4 @@
-п»їpackage its.development.bots.foodBot.commands;
+package its.development.bots.foodBot.commands;
 
 import its.development.common.commands.BotCommandTextProvider;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
@@ -23,7 +23,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "РћС‚РєСЂС‹С‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ", "РћС‚РїСЂР°РІРёС‚СЊ PUSH");
+        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
 
         replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-services.firebaseapp.com/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
@@ -40,7 +40,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Р­С‚РѕС‚ РїСЂРёРјРµСЂ Web App РїРѕСЃРІСЏС‰РµРЅ Food-tech РёРЅРґСѓСЃС‚СЂРёРё. Р’ РєСЂР°С‚С‡Р°Р№С€РёРµ СЃСЂРѕРєРё РјС‹ Р·Р°РїСѓСЃС‚РёРј Telegram Р±РѕС‚Р° СЃ Web App РґР»СЏ Р’Р°С€РµРіРѕ Р±РёР·РЅРµСЃР°. " +
-                "Р•РіРѕ РєРѕРЅРІРµСЂСЃРёРѕРЅРЅРѕСЃС‚СЊ Рё РїРѕРєР°Р·Р°С‚РµР»Рё РІРѕРІР»РµС‡РµРЅРёСЏ РІ СЂР°Р·С‹ РІС‹С€Рµ, С‡РµРј Сѓ РјРѕР±РёР»СЊРЅРѕРіРѕ РїСЂРёР»РѕР¶РµРЅРёСЏ РґР»СЏ РјР°Р»РѕРіРѕ Рё СЃСЂРµРґРЅРµРіРѕ Р±РёР·РЅРµСЃР°, Р° СЃС‚РѕРёРјРѕСЃС‚СЊ РїРѕР»РЅРѕРіРѕ С†РёРєР»Р° СЂР°Р·СЂР°Р±РѕС‚РєРё РІ СЂР°Р·С‹ РјРµРЅСЊС€Рµ";
+        return "Этот пример Web App посвящен Food-tech индустрии. В кратчайшие сроки мы запустим Telegram бота с Web App для Вашего бизнеса. " +
+                "Его конверсионность и показатели вовлечения в разы выше, чем у мобильного приложения для малого и среднего бизнеса, а стоимость полного цикла разработки в разы меньше";
     }
 }

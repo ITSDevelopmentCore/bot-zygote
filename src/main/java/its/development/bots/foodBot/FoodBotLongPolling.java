@@ -1,4 +1,4 @@
-﻿package its.development.bots.foodBot;
+package its.development.bots.foodBot;
 
 import its.development.bots.BotConstants;
 import its.development.base.BaseHandler;
