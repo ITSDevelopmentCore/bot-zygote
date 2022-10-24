@@ -1,7 +1,6 @@
 package its.development.bots.serviceBot;
 
 import its.development.bots.BotConstants;
-import its.development.bots.educationBot.EducationBotLongPolling;
 import its.development.bots.serviceBot.commands.StartCommand;
 import its.development.base.BaseHandler;
 import its.development.common.handlers.CallbackQueryHandler;

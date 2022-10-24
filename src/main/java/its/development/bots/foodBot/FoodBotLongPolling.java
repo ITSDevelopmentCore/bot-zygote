@@ -36,12 +36,12 @@ public class FoodBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotUsername() {
-        return BotConstants.BOT_SERVICES_NAME;
+        return BotConstants.BOT_FOOD_NAME;
     }
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotServicesToken();
+        return BotConstants.getBotFoodToken();
     }
 
     @Override
