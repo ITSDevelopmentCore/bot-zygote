@@ -25,7 +25,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
         InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
 
-        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-services.firebaseapp.com/"));
+        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-food-5edce.firebaseapp.com/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
 
         sendMessage.setReplyMarkup(replyKeyboard);
