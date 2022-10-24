@@ -23,7 +23,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
+        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "РћС‚РєСЂС‹С‚СЊ РїСЂРёР»РѕР¶РµРЅРёРµ", "РћС‚РїСЂР°РІРёС‚СЊ PUSH");
 
         replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-services.firebaseapp.com/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
@@ -40,7 +40,6 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Этот пример Web App посвящен Food-tech индустрии. В кратчайшие сроки мы запустим Telegram бота с Web App для Вашего бизнеса. " +
-                "Его конверсионность и показатели вовлечения в разы выше, чем у мобильного приложения для малого и среднего бизнеса, а стоимость полного цикла разработки в разы меньше";
-    }
+        return "Р­С‚РѕС‚ Web App РґРµРјРѕРЅСЃС‚СЂРёСЂСѓРµС‚ С„СѓРЅРєС†РёРѕРЅР°Р» РґР»СЏ Food-tech РёРЅРґСѓСЃС‚СЂРёРё. РљРѕРЅРІРµСЂСЃРёСЏ Рё РІРѕРІР»РµС‡РµРЅРЅРѕСЃС‚СЊ С‚Р°РєРѕРіРѕ Р±РѕС‚Р° РІС‹С€Рµ, С‡РµРј Сѓ РјРѕР±РёР»СЊРЅС‹С… РїСЂРёР»РѕР¶РµРЅРёР№ РґР»СЏ РјР°Р»РѕРіРѕ Рё СЃСЂРµРґРЅРµРіРѕ Р±РёР·РЅРµСЃР°, " +
+                "Р° СЃС‚РѕРёРјРѕСЃС‚СЊ СЂР°Р·СЂР°Р±РѕС‚РєРё Рё СЃРєРѕСЂРѕСЃС‚СЊ РјРѕРґРёС„РёРєР°С†РёР№ РІ СЂР°Р·С‹ РјРµРЅСЊС€Рµ.";
 }
