@@ -1,6 +1,7 @@
-package its.development.bots.educationBot.commands;
+package its.development.bots.routeBot.commands;
 
 import its.development.common.commands.BotCommandTextProvider;
+import its.development.utils.MessageFactory;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -9,12 +10,11 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMa
 import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import its.development.utils.MessageFactory;
 
 public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     private static final String COMMAND_IDENTIFIER = "start";
-    private static final String DESCRIPTION = "ITS Web Apps";
+    private static final String DESCRIPTION = "ITS Demo web app Route";
 
     public StartCommand() {
         super(COMMAND_IDENTIFIER, DESCRIPTION);
@@ -25,7 +25,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
         InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
 
-        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-education.firebaseapp.com"));
+        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-ro.web.app/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
 
         sendMessage.setReplyMarkup(replyKeyboard);
@@ -40,7 +40,8 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public String getCommandText() {
-        return "Наши боты с приложениями могут служить самым разным целям. Повысить вовлеченность, автоматизировать процессы и снизить затраты в любой сфере. " +
-                "К примеру рассмотрим сервис по быстрому подбору репетитора в Telegram. Приложения и стандартный функционал ботов могут дополнять друг друга.";
+        return "Современные телеграм боты являются лучшим и самым быстрым решением для внутренних корпоративных процессов. Давайте посмотрим на демонстрационный вариант " +
+                "приложение для курьера доставки новой пиццерии, или чего либо еще. Наши боты выполнят любую прихоть заказчика, будь то взаимодействие с картами, постоянно меняющимися данными, или " +
+                "наличие нескольких экранов.";
     }
 }
