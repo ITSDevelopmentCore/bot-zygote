@@ -1,20 +1,16 @@
 package its.development.utils;
 
-import org.telegram.telegrambots.meta.api.methods.AnswerPreCheckoutQuery;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboard;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.ReplyKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardButton;
-import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 
 import javax.annotation.Nonnull;
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.stream.Collectors;
 
-public class MessageFactory {
+public class TelegramUIFactory {
 
     public static SendMessage simpleTextMessage(
                     @Nonnull String text,
@@ -32,7 +28,7 @@ public class MessageFactory {
      * @param context - Context String data for every button.
      * @return configured Inline Keyboard Markup
      */
-    public static ReplyKeyboard inlineKeyboardMarkup(int buttonsPerRow, String... context)
+    public static InlineKeyboardMarkup createInlineKeyboard(int buttonsPerRow, String... context)
     {
         LinkedBlockingQueue<InlineKeyboardButton> buttons = transformStringsToButtons(context);
 

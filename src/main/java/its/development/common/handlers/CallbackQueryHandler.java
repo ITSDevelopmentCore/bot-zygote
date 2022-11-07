@@ -1,7 +1,7 @@
 package its.development.common.handlers;
 
 import its.development.base.BaseHandler;
-import its.development.utils.MessageFactory;
+import its.development.utils.TelegramUIFactory;
 import org.telegram.telegrambots.bots.DefaultAbsSender;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
@@ -23,7 +23,7 @@ public class CallbackQueryHandler extends BaseHandler {
                 @Override
                 public void run() {
                     try {
-                        sender.execute(MessageFactory.simpleTextMessage(
+                        sender.execute(TelegramUIFactory.simpleTextMessage(
                                 "Вы получили PUSH уведомление с крайне выгодным предложением!",
                                 update.getCallbackQuery().getMessage().getChatId()));
                     } catch (TelegramApiException e) {

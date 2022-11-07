@@ -1,7 +1,7 @@
 package its.development.bots.routeBot.commands;
 
 import its.development.common.commands.BotCommandTextProvider;
-import its.development.utils.MessageFactory;
+import its.development.utils.TelegramUIFactory;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
@@ -22,8 +22,8 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
-        SendMessage sendMessage = MessageFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) MessageFactory.inlineKeyboardMarkup(1, "Открыть приложение", "Отправить PUSH");
+        SendMessage sendMessage = TelegramUIFactory.simpleTextMessage(getCommandText(), chat.getId());
+        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) TelegramUIFactory.createInlineKeyboard(1, "Открыть приложение", "Отправить PUSH");
 
         replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-ro.web.app/"));
         replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
