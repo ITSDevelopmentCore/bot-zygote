@@ -19,6 +19,12 @@ public class BotConstants {
     /**
      * Getters
      */
+
+    public static String getBotTestToken()
+    {
+        return BOT_TEST_TOKEN;
+
+    }
     public static String getBotEducationToken()
     {
         return EnvironmentConstants.BUILD_TYPE == DEBUG ? BOT_TEST_TOKEN : BOT_EDUCATION_TOKEN;

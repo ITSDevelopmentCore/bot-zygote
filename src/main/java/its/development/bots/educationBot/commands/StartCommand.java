@@ -35,7 +35,6 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         InlineKeyboardMarkup replyKeyboard = TelegramUIFactory
                 .createInlineKeyboard(1, "Открыть приложение", "Отправить PUSH", "К другим образцам");
 
-
         List<List<InlineKeyboardButton>> inlineKeyboard = replyKeyboard.getKeyboard();
 
         inlineKeyboard

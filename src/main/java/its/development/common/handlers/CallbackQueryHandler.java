@@ -29,7 +29,7 @@ public class CallbackQueryHandler extends BaseHandler {
     @Override
     public void execute(DefaultAbsSender sender, Update update) {
 
-        switch (update.getCallbackQuery().getData().toLowerCase(Locale.ROOT))
+        switch (update.getCallbackQuery().getData().toLowerCase())
         {
             case SEND_PUSH_STRING:
             {
@@ -74,21 +74,13 @@ public class CallbackQueryHandler extends BaseHandler {
 
         List<List<InlineKeyboardButton>>  keyboard = keyboardMarkup.getKeyboard();
 
-        keyboard.get(KEYBOARD_FIRST_ROW).get(ROW_FIRST_BUTTON).setWebApp(new WebAppInfo("https://t.me/its_demo_shop_bot"));
-        keyboard.get(KEYBOARD_FIRST_ROW).get(ROW_FIRST_BUTTON).setCallbackData(null);
+        keyboard.get(KEYBOARD_FIRST_ROW).get(ROW_FIRST_BUTTON).setUrl("https://t.me/its_demo_shop_bot");
+        keyboard.get(KEYBOARD_SECOND_ROW).get(ROW_FIRST_BUTTON).setUrl("https://t.me/its_demo_food_bot");
+        keyboard.get(KEYBOARD_THIRD_ROW).get(ROW_FIRST_BUTTON).setUrl("https://t.me/its_demo_services_bot");
+        keyboard.get(KEYBOARD_FOURTH_ROW).get(ROW_FIRST_BUTTON).setUrl("https://t.me/its_demo_route_bot");
+        keyboard.get(KEYBOARD_FIFTH_ROW).get(ROW_FIRST_BUTTON).setUrl("https://t.me/its_demo_education_bot");
 
-        keyboard.get(KEYBOARD_SECOND_ROW).get(ROW_SECOND_BUTTON).setWebApp(new WebAppInfo("https://t.me/its_demo_food_bot"));
-        keyboard.get(KEYBOARD_SECOND_ROW).get(ROW_SECOND_BUTTON).setCallbackData(null);
-
-        keyboard.get(KEYBOARD_THIRD_ROW).get(ROW_THIRD_BUTTON).setWebApp(new WebAppInfo("https://t.me/its_demo_services_bot"));
-        keyboard.get(KEYBOARD_THIRD_ROW).get(ROW_THIRD_BUTTON).setCallbackData(null);
-
-        keyboard.get(KEYBOARD_FOURTH_ROW).get(ROW_FOURTH_BUTTON).setWebApp(new WebAppInfo("https://t.me/its_demo_route_bot"));
-        keyboard.get(KEYBOARD_FOURTH_ROW).get(ROW_FOURTH_BUTTON).setCallbackData(null);
-
-        keyboard.get(KEYBOARD_FIFTH_ROW).get(ROW_FIFTH_BUTTON).setWebApp(new WebAppInfo("https://t.me/its_demo_education_bot"));
-        keyboard.get(KEYBOARD_FIFTH_ROW).get(ROW_FIFTH_BUTTON).setCallbackData(null);
-
+        message.setReplyMarkup(keyboardMarkup);
         try {
             sender.execute(message);
         } catch (TelegramApiException e) {
