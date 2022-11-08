@@ -41,7 +41,7 @@ public class FoodBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotFoodToken();
+        return BotConstants.BOT_FOOD_TOKEN;
     }
 
     @Override

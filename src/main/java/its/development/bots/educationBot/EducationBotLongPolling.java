@@ -42,7 +42,7 @@ public class EducationBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotEducationToken();
+        return BotConstants.BOT_EDUCATION_TOKEN;
     }
     
     @Override

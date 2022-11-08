@@ -41,7 +41,7 @@ public class ServicesBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotServicesToken();
+        return BotConstants.BOT_SERVICES_TOKEN;
     }
 
     @Override

@@ -29,7 +29,6 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
 
-
         SendMessage sendMessage = TelegramUIFactory.simpleTextMessage(getCommandText(), chat.getId());
 
         InlineKeyboardMarkup replyKeyboard = TelegramUIFactory

@@ -41,7 +41,7 @@ public class ShopBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotShopToken();
+        return BotConstants.BOT_SHOP_TOKEN;
     }
 
     @Override

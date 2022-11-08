@@ -41,7 +41,7 @@ public class RouteBotLongPolling extends TelegramLongPollingCommandBot {
 
     @Override
     public String getBotToken() {
-        return BotConstants.getBotRouteToken();
+        return BotConstants.BOT_ROUTE_TOKEN;
     }
 
     @Override
