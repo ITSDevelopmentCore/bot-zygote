@@ -7,9 +7,15 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import java.util.List;
+
+import static its.development.utils.TelegramUIConstants.KEYBOARD_FIRST_ROW;
+import static its.development.utils.TelegramUIConstants.ROW_FIRST_BUTTON;
 
 public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
@@ -23,10 +29,22 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] arguments) {
         SendMessage sendMessage = TelegramUIFactory.simpleTextMessage(getCommandText(), chat.getId());
-        InlineKeyboardMarkup replyKeyboard = (InlineKeyboardMarkup) TelegramUIFactory.createInlineKeyboard(1, "Открыть приложение", "Отправить PUSH");
 
-        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://fir-web-app-ro.web.app/"));
-        replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
+        InlineKeyboardMarkup replyKeyboard = TelegramUIFactory
+                .createInlineKeyboard(1, "Открыть приложение", "Отправить PUSH");
+
+
+        List<List<InlineKeyboardButton>> inlineKeyboard = replyKeyboard.getKeyboard();
+
+        inlineKeyboard
+                .get(KEYBOARD_FIRST_ROW)
+                .get(ROW_FIRST_BUTTON)
+                .setWebApp(new WebAppInfo("https://fir-web-app-ro.web.app/"));
+
+        inlineKeyboard
+                .get(KEYBOARD_FIRST_ROW)
+                .get(ROW_FIRST_BUTTON)
+                .setCallbackData(null);
 
         sendMessage.setReplyMarkup(replyKeyboard);
 

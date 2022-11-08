@@ -7,9 +7,14 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Chat;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo;
 import org.telegram.telegrambots.meta.bots.AbsSender;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+
+import java.util.List;
+
+import static its.development.utils.TelegramUIConstants.*;
 
 public class StartCommand extends BotCommand implements BotCommandTextProvider {
 
@@ -28,8 +33,18 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         InlineKeyboardMarkup replyKeyboard = TelegramUIFactory
                 .createInlineKeyboard(1, "Открыть приложение", "Отправить PUSH");
 
-        replyKeyboard.getKeyboard().get(0).get(0).setWebApp(new WebAppInfo("https://google.com"));
-        replyKeyboard.getKeyboard().get(0).get(0).setCallbackData(null);
+
+        List<List<InlineKeyboardButton>> inlineKeyboard = replyKeyboard.getKeyboard();
+
+        inlineKeyboard
+                .get(KEYBOARD_FIRST_ROW)
+                .get(ROW_FIRST_BUTTON)
+                .setWebApp(new WebAppInfo("https://635d4c86686fae79d284aaac--clever-starlight-079bec.netlify.app/"));
+
+        inlineKeyboard
+                .get(KEYBOARD_FIRST_ROW)
+                .get(ROW_FIRST_BUTTON)
+                .setCallbackData(null);
 
         sendMessage.setReplyMarkup(replyKeyboard);
 
