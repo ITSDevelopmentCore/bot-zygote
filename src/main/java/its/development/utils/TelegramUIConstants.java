@@ -1,4 +1,4 @@
-﻿package its.development.utils;
+package its.development.utils;
 
 public class TelegramUIConstants {
 
