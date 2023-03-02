@@ -39,7 +39,7 @@ public class StartCommand extends BotCommand implements BotCommandTextProvider {
         inlineKeyboard
                 .get(KEYBOARD_FIRST_ROW)
                 .get(ROW_FIRST_BUTTON)
-                .setWebApp(new WebAppInfo("https://635d4c86686fae79d284aaac--clever-starlight-079bec.netlify.app/"));
+                .setWebApp(new WebAppInfo("https://640129abf2a010463fbfa30b--stunning-peony-459bc4.netlify.app/"));
 
         inlineKeyboard
                 .get(KEYBOARD_FIRST_ROW)
